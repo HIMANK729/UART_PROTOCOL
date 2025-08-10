@@ -1,5 +1,4 @@
-// Code your testbench here
-// or browse Examples
+
 module tb_uart_shared;
     reg clk;
     reg reset;
@@ -94,3 +93,4 @@ module tb_uart_shared;
         $finish;
     end
 endmodule
+
