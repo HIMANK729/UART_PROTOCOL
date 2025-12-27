@@ -14,6 +14,12 @@ Baud Rate: 9600 bps (configurable)
 Receiver Oversampling: ×4
 Data Depth:1 byte
 
+# FPGA BOARD:-
+Xillinx Edge spartan 7
+
+# Software use:-
+Tera term
+
  # Project Structure
 UART_PROTOCOL/
 
@@ -25,11 +31,15 @@ UART_PROTOCOL/
 
 ├── mem.txt           # memory file containig a 1 byte number(1000_0001)
 
-├── .sv      # Shared synchronous memory
+├──Testbench
 
-├── topmodule.sv       # Integrates all modules
+  ├──Testbench/reciver.sv     # Testbench for reciever
 
-└── tb_uart_shared.sv  # Self-checking loopback testbench
+  ├── top.sv      # Self-checking  testbench includes both trasmitter and receiver at 2 different clock
+
+  └── transmitter.sv #Testbench for transmitter
+
+
 
 # Module Descriptions
 1. Transmitter (transmitter.sv)
@@ -57,17 +67,11 @@ rdone: High when a full byte is received
 
 
 # Data Flow Diagram
-<img width="1536" height="1024" alt="4c746bb5-c842-44bb-ac91-ff853dc19113" src="https://github.com/user-attachments/assets/6fce821d-c0d1-44b5-8672-111839b44dee" />
+Transmitter:-
+<img width="4270" height="5530" alt="image" src="https://github.com/user-attachments/assets/5a89eae5-57f6-4dbf-8c9a-5868a3c67399" />
 
-# Testbenchs
-transmitter:-
-
-receiver:-
-
-both:-
-
-
-
+Reciever:-
+<img width="10423" height="8005" alt="image" src="https://github.com/user-attachments/assets/8f6f2c86-4484-4877-962e-a00ba9fd91ed" />
 
 # Parameters Overview
 Parameter	Module	Description	Default
